@@ -57,6 +57,19 @@
             });
         </script>
 
+         <!-- Close folders on nav on touch devices -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+            <!-- Touch Script -->
+        <script>
+            $(document).on('mq4hsChange', function (e) {
+                console.log(e);
+                $(document.documentElement).toggleClass('no-touch', e.trueHover);
+            });
+        </script>
+            <!-- Touch Shim -->
+        <script src="{{asset('js/mq4-hover-shim.js')}}"></script>
+
             <!-- Single Post 'has-image' class -->
 
         <script>

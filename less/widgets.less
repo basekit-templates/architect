@@ -583,6 +583,41 @@
     }
 }
 
+// Touch detection folder styling
+// --------------------------------
+
+
+// On devices without touch enabled, hover events will work as normal
+.no-touch {
+    .extendednavigation .navigation-item {
+       // Hides JS toggle open
+        &.folder-open .navigation-list--children {
+            display: none;
+        }
+        // Activates hover state open
+        &:hover .navigation-list--children {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+
+// On devices with touch enabled, hover is disabled and the JS toggle (.folder-open) is used
+.extendednavigation .navigation-item {
+
+    // Hides hover state
+    &:hover .navigation-list--children {
+        display: none;
+    }
+
+    // Activates JS toggle open
+    &.folder-open .navigation-list--children {
+        display: block;
+        width: 100%;
+    }
+}
+
 
 
 
@@ -1063,8 +1098,8 @@ hr.rule {
 
 blockquote {
     position: relative;
-    min-height: 80px;
     margin-top: 52px;
+    margin-bottom: 45px;
     padding-left: 130px;
     @media @tablet {
         margin-top: 20px;
@@ -1077,7 +1112,6 @@ blockquote:before {
     position: absolute;
     top: 49px;
     left: 0;
-    z-index: -1;
     line-height: 0;
     font-size: 250px;
     font-family: garamond, serif;
