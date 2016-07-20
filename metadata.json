@@ -47,11 +47,11 @@
             "letter-spacing": "0px"
         },
         "font3": {
-            "font-family": "\"Vollkorn\", Georgia, serif",
+            "font-family": "\"Istok Web\", Verdana, Geneva, sans-serif",
             "font-size": "26px",
             "font-weight": "400",
-            "line-height": "36px",
-            "color": "@color-swatch4",
+            "line-height": "38px",
+            "color": "@color-swatch5",
             "letter-spacing": "0px"
         },
         "font4": {
