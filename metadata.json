@@ -6,9 +6,9 @@
     "templateType":"standard",
     "pageTypes": ["home", "blogpost"],
     "images":[
-        "images/slideshow-corner.jpg",
-        "images/slideshow-building.jpg",
-        "images/slideshow-balconies.jpg",
+        "images/slideshow-1.jpg",
+        "images/slideshow-2.jpg",
+        "images/slideshow-3.jpg",
         "images/logo.png",
         "images/gallery/img1.jpg",
         "images/gallery/img2.jpg",
