@@ -26,10 +26,10 @@
 
         <!-- Nav Menu Script -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-           <script>window.jQuery || document.write('<script src="{{ asset('libs/jquery-1.10.2.min.js')}}"><\/script>')
+           <script nonce="{{ numberUsedOnce }}">window.jQuery || document.write('<script src="{{ asset('libs/jquery-1.10.2.min.js')}}"><\/script>')
         </script>
 
-        <script>
+        <script nonce="{{ numberUsedOnce }}">
             // Toggles class open to display/hide the whole navigation
             $( ".navigation-toggle" ).click(function() {
                 $( ".bk-extendednavigation" ).toggleClass( "open" );
@@ -46,7 +46,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 
         <!-- Touch Script -->
-        <script>
+        <script nonce="{{ numberUsedOnce }}">
             $(document).on('mq4hsChange', function (e) {
                 console.log(e);
                 $(document.documentElement).toggleClass('no-touch', e.trueHover);
@@ -57,7 +57,7 @@
         <script src="{{asset('js/mq4-hover-shim.js')}}"></script>
 
         <!-- Single Post 'has-image' class -->
-        <script>
+        <script nonce="{{ numberUsedOnce }}">
             $(document).ready(function(){
             if ( $("article").hasClass("post-article--has-image") ) {
             $(".template-blogpost").addClass("has-image");
