@@ -31,3 +31,12 @@ $(document).ready(function(){
   }).resize();
 
 }); // jQuery
+
+
+$(window).scroll(function(){
+      if ($(this).scrollTop() > 5) {
+          $('.template-default .template-header').addClass('sticky');
+      } else {
+          $('.template-default .template-header').removeClass('sticky');
+      }
+});
