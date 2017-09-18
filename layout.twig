@@ -20,20 +20,16 @@
         {% include basekit.bodyScript %}
 
 
-        <!-- Sticky Header -->
-        <script src="{{asset('js/position-sticky.js')}}"></script>
-
-
-        <!-- Nav Menu Script -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-           <script nonce="{{ numberUsedOnce }}">window.jQuery || document.write('<script src="{{ asset('libs/jquery-1.10.2.min.js')}}"><\/script>')
-        </script>
+        <!-- Close folders on nav on touch devices -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 
         <script nonce="{{ numberUsedOnce }}">
+        
             // Toggles class open to display/hide the whole navigation
-            $( ".navigation-toggle" ).click(function() {
+            $(document).on("click", ".navigation-toggle", function() {
                 $( ".bk-extendednavigation" ).toggleClass( "open" );
             });
+
             // Togglse class open to display/hide folders
             $( ".navigation-item.folder" ).each(function() {
                 $( this ).click(function() {
@@ -42,8 +38,8 @@
             });
         </script>
 
-         <!-- Close folders on nav on touch devices -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+        <!-- Sticky Header -->
+        <script src="{{asset('js/position-sticky.js')}}"></script>
 
         <!-- Touch Script -->
         <script nonce="{{ numberUsedOnce }}">
@@ -59,9 +55,9 @@
         <!-- Single Post 'has-image' class -->
         <script nonce="{{ numberUsedOnce }}">
             $(document).ready(function(){
-            if ( $("article").hasClass("post-article--has-image") ) {
-            $(".template-blogpost").addClass("has-image");
-            }
+                if ( $("article").hasClass("post-article--has-image") ) {
+                $(".template-blogpost").addClass("has-image");
+                }
             });
         </script>
 
