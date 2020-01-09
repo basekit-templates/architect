@@ -5,6 +5,7 @@
     "screenshot": "screenshot.jpg",
     "templateType":"standard",
     "pageTypes": ["home"],
+    "versionTenCompatible": 1,
     "images":[
         "images/slideshow-1.jpg",
         "images/slideshow-2.jpg",
