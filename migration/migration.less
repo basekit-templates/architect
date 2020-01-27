@@ -9,11 +9,52 @@
 
     // Stylesheet overrides
     // -----------------------------
+
+
+    // Brings sticky navigation below editor UI
+    &.edit .sticky {
+        z-index: 9999;
+    }
     
 
     .container .widget {
-        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
         width: 100%;
+    }
+
+    .widget[data-name="row"],
+    .widget[data-name="responsivecolumns"] {
+        margin: 0;
+    }
+
+
+    [data-name="row"] {
+        @media @mobile {
+            display: block;
+        }
+    }
+    
+    
+    [data-name="row"] .select-wrap:after {
+        right: 12px;
+    }
+
+
+    [data-name="row"] .post-content {
+        margin: 0;
+        top: initial;
+    }
+
+
+    [data-name="row"] .responsiveslideshow .slides-list {
+        max-width: 100%;
+    }
+
+
+    .ecomproductslist .product-item-details,
+    .ecomfeaturedproducts .product-item-details {
+        top: initial;
     }
 
 
@@ -24,21 +65,30 @@
     // Applies spacing to widgets to mimic container width
     .empty-zone,
     #page-zones__main:empty,
-    #page-zones__main > .widget:not([data-name="row"]),
+    #page-zones__main > .widget:not([data-name="row"]):not([data-name="image"]),
     .row:not(.row--width-no-padding) .row__container {
         margin-left: auto;
         margin-right: auto;
         max-width: 1200px;
         width: 100%;
+        
+        @media only screen and (max-width: 1300px) {
+            display: block;
+            width: 90%;
+        }
     }
     
 
     // Adds spacing to a section when a widget follows it
-    #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]),
+    #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]):not([data-name="image"]),
     #page-zones__main > .widget:not([data-name="row"]) + [data-name="row"]:not(:last-child),
     &.edit #page-zones__main-overlay + .widget:not([data-name="row"]),
     #page-zones__main > .widget:not([data-name="row"]):first-child {
         margin-top: 50px;
+    }
+
+    #page-zones__main [data-name="row"] .widget + .widget {
+        margin-top: 20px;
     }
     
     
