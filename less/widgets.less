@@ -54,6 +54,10 @@
         align-self: auto;
     }
 
+    .image-link {
+        z-index: 1;
+    }
+
     .slide-navigation,
     .slide-pagination {
         -webkit-flex: 0 1 5%;
@@ -591,7 +595,7 @@
 
 
 // On devices without touch enabled, hover events will work as normal
-.no-touch {
+@media (hover: hover) {
     .extendednavigation .navigation-item {
        // Hides JS toggle open
         &.folder-open .navigation-list--children {
@@ -605,22 +609,22 @@
     }
 }
 
-
 // On devices with touch enabled, hover is disabled and the JS toggle (.folder-open) is used
-.extendednavigation .navigation-item {
+@media (hover: none) {
+    .extendednavigation .navigation-item {
 
-    // Hides hover state
-    &:hover .navigation-list--children {
-        display: none;
-    }
+        // Hides hover state
+        &:hover .navigation-list--children {
+            display: none;
+        }
 
-    // Activates JS toggle open
-    &.folder-open .navigation-list--children {
-        display: block;
-        width: 100%;
+        // Activates JS toggle open
+        &.folder-open .navigation-list--children {
+            display: block;
+            width: 100%;
+        }
     }
 }
-
 
 
 

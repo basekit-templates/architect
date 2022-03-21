@@ -24,3 +24,18 @@
     </section>
 
 {% endblock %}
+
+{% block scripts %}
+    <script nonce="{{ numberUsedOnce }}">
+        var stickyElem = document.querySelector(".template-header");
+        var currentStickyPos = stickyElem.getBoundingClientRect().top + window.pageYOffset;
+
+        window.onscroll = function() {
+            if(window.pageYOffset > currentStickyPos) {
+                stickyElem.classList.add('sticky');
+            } else {
+                stickyElem.classList.remove('sticky');
+            }
+        }
+    </script>
+{% endblock %}

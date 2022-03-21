@@ -22,5 +22,12 @@
     <section class="container">
         {{zone('main')|raw}}
     </section>
+{% endblock %}
 
+{% block scripts %}
+    <script nonce="{{ numberUsedOnce }}">
+        if (document.querySelector('.post-article').classList.contains('post-article--has-image')) {
+            document.querySelector('.template-blogpost').classList.add('has-image');
+        }
+    </script>
 {% endblock %}
