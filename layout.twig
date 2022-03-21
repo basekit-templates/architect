@@ -8,7 +8,6 @@
 
     <body {{ isV10sSite ? 'id="migrated-site"' : '' }} class="{{ page.backgroundClass }} {% block class %}{% endblock %}">
 
-
         <!-- Main Widget Zone -->
         {% block content %}
         {% endblock %}
@@ -16,50 +15,16 @@
         <!-- Footer Include -->
         {% include "includes/footer.twig" %}
 
-
         {% include basekit.bodyScript %}
 
-
-        <!-- Close folders on nav on touch devices -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-
         <script nonce="{{ numberUsedOnce }}">
-        
-            // Toggles class open to display/hide the whole navigation
-            $(document).on("click", ".navigation-toggle", function() {
-                $( ".bk-extendednavigation" ).toggleClass( "open" );
-            });
-
-            // Togglse class open to display/hide folders
-            $( ".navigation-item.folder" ).each(function() {
-                $( this ).click(function() {
-                    $( this ).toggleClass( "open" );
-                });
+            var navigationToggle = document.querySelector('.navigation-toggle');
+            navigationToggle.addEventListener('click', function () {
+                document.querySelector('.bk-extendednavigation').classList.toggle('open');
             });
         </script>
 
-        <!-- Sticky Header -->
-        <script src="{{asset('js/position-sticky.js')}}"></script>
-
-        <!-- Touch Script -->
-        <script nonce="{{ numberUsedOnce }}">
-            $(document).on('mq4hsChange', function (e) {
-                console.log(e);
-                $(document.documentElement).toggleClass('no-touch', e.trueHover);
-            });
-        </script>
-
-        <!-- Touch Shim -->
-        <script src="{{asset('js/mq4-hover-shim.js')}}"></script>
-
-        <!-- Single Post 'has-image' class -->
-        <script nonce="{{ numberUsedOnce }}">
-            $(document).ready(function(){
-                if ( $("article").hasClass("post-article--has-image") ) {
-                $(".template-blogpost").addClass("has-image");
-                }
-            });
-        </script>
-
+        {% block scripts %}
+        {% endblock %}
     </body>
 </html>
