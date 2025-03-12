@@ -1,21 +1,13 @@
-
 // -----------------------------
 // Migration Styles
 // -----------------------------
 
-
 #migrated-site {
-
-
-    // Stylesheet overrides
-    // -----------------------------
-
 
     // Brings sticky navigation below editor UI
     &.edit .sticky {
         z-index: 9999;
     }
-    
 
     .container .widget {
         margin-left: 0;
@@ -28,29 +20,24 @@
         margin: 0;
     }
 
-
     [data-name="row"] {
         @media @mobile {
             display: block;
         }
     }
     
-    
     [data-name="row"] .select-wrap:after {
         right: 12px;
     }
-
 
     [data-name="row"] .post-content {
         margin: 0;
         top: initial;
     }
 
-
     [data-name="row"] .responsiveslideshow .slides-list {
         max-width: 100%;
     }
-
 
     .ecomproductslist .product-item-details,
     .ecomfeaturedproducts .product-item-details {
@@ -60,7 +47,6 @@
 
     // Migration styles
     // -----------------------------
-    
     
     // Applies spacing to widgets to mimic container width
     .empty-zone,
@@ -73,11 +59,17 @@
         width: 100%;
         
         @media only screen and (max-width: 1300px) {
-            display: block;
             width: 90%;
         }
     }
-    
+
+    .empty-zone,
+    #page-zones__main:empty,
+    #page-zones__main > .widget:not([data-name="row"]):not([data-name="image"]) {
+        @media only screen and (max-width: 1300px) {
+            display: block;
+        }
+    }
 
     // Adds spacing to a section when a widget follows it
     #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]):not([data-name="image"]),
@@ -91,18 +83,15 @@
         margin-top: 20px;
     }
     
-    
     // Move spacing to first widget in the main zone (not sections)
     #page-zones__main > .widget:not([data-name="row"]):first-child {
         margin-top: 50px;
     }
 
-    
     // Move spacing to last widget in the main zone (not sections)
     #page-zones__main > .widget:not([data-name="row"]):last-child {
         margin-bottom: 50px;
     }
-    
     
     [data-name="row"] .column .widget,
     [data-name="row"] .widget:only-child { 
